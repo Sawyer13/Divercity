@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Home</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script type="text/javascript">
+        function initMap(){
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: new google.maps.LatLng(40.415363, -3.707398),
+                zoom: 12
+            });
+            {% for r in restrooms %}
+                var pos = new google.maps.LatLng({{r.lat}}, {{r.lng}});
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    title:'{{r.directions}}'
+                });
+                // Add marker to de map
+                marker.setMap(map);
+            {% endfor %}
+        }
+    </script>
+  </head>
+
+  <body onload="initMap()">
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Divercity</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/add">Añadir un baño</a></li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+
+      <div class="container">
+          <div id="map" style="width:100%; height:650px;"></div>
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Divercity 2017</span>
+        </div>
+      </footer>
+    </div> <!-- Container -->
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK1btl0omSyS3_6XnSVefL0jPBXAF3OK4&callback=initMap"></script>
+
+  </body>
+</html>

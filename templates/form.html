@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Add a restroom</title>
+
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        function showPosition(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position){
+                    document.getElementById('lat').value = position.coords.latitude;
+                    document.getElementById('lng').value = position.coords.longitude;
+                    $('.alert').show();
+                    document.getElementById('submitBtn').disabled = false;
+                });
+
+            } else{
+                alert("Lo sentimos, tu navegador no es compatible con la geolocalización.");
+            }
+        }
+
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Divercity</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/add">Añadir un baño</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+          <h4>Añade un baño nuevo</h4>
+        <form action = "/add" method = "POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="place">Lugar</label>
+              <input type="text" required="true" class="form-control" id="place" name="place" placeholder="Dirección" value={{r.place}}>
+            </div>
+            <div class="form-group">
+              <label for="description">Descripción</label>
+                <textarea id="txtArea" required="true" class="form-control" id="description" name="description"
+                          placeholder="Descripción/Indicaciones para llegar" value={{r.description}} rows="10" cols="70"></textarea>
+            </div>
+              <div class="form-group">
+              <label for="locationBtn">Ubicación</label><br />
+              <button type="button" id="locationBtn" class="btn btn-sm" onclick="showPosition();">Guardar mi posición</button>
+                <br>
+                  <span class="text-muted">*Sólo guardamos la ubicación para almacenar la posición del baño, no guardamos quién lo envía.</span>
+            </div>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Se ha guardado tu posición correctamente
+            </div>
+            <!-- Latitude and longitude obtained with Google geofunction -->
+            <input type="hidden" class="form-control" id="lat" name="lat" value={{r.lat}}>
+            <input type="hidden" class="form-control" id="lng" name="lng" value={{r.lng}}>
+          <button type="submit" id="submitBtn" class="btn btn-primary" disabled="disabled">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Divercity 2017</span>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK1btl0omSyS3_6XnSVefL0jPBXAF3OK4"></script>
+  </body>
+</html>
