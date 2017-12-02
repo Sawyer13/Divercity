@@ -1,4 +1,5 @@
-# Divercity
+![alt text](https://github.com/Divercity/Divercity/blob/master/static/img/divercity.jpg)
+
 Divercity es una aplicación web para encontrar baños de género neutro.
 Las baños de género neutro o unisex pueden proporcionar un espacio más seguro y acogedor para una persona transgénero o que no se identifica con los géneros masculino o femenino, por los cuales los baños públicos a menudo se dividen.
 
