@@ -10,15 +10,25 @@ app = Flask(__name__)
 mongo = PyMongo(app)
 
 # Main
-@app.route("/", methods=["GET"])
+@app.route("/", methods=["GET", "POST"])
 def main():
     if request.method == "GET":
         #mongo.db.collection.remove({})
         restrooms = []
+        restroom = {}
         cursor = mongo.db.collection.find()
         for record in cursor:
             restrooms.append(record)
-        return render_template("index.html", restrooms=restrooms)
+        return render_template("index.html", restrooms=restrooms, r=restroom)
+    if request.method == "POST":
+        restroom = {}
+        restroom["place"] = request.form["place"]
+        restroom["description"] = request.form["description"]
+        # Calculate latitude and longitude with given direction
+        restroom["lat"] = request.form["lat"]
+        restroom["lng"] = request.form["lng"]
+        mongo.db.collection.insert(restroom)
+        return render_template("index.html", r=restroom)
 
 
 # Restroom add form
