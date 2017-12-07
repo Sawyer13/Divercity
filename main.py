@@ -13,7 +13,7 @@ mongo = PyMongo(app)
 @app.route("/", methods=["GET", "POST"])
 def main():
     if request.method == "GET":
-        #mongo.db.collection.remove({})
+        mongo.db.collection.remove({})
         restrooms = []
         restroom = {}
         cursor = mongo.db.collection.find()
@@ -28,7 +28,11 @@ def main():
         restroom["lat"] = request.form["lat"]
         restroom["lng"] = request.form["lng"]
         mongo.db.collection.insert(restroom)
-        return render_template("index.html", r=restroom)
+        restrooms = []
+        cursor = mongo.db.collection.find()
+        for record in cursor:
+            restrooms.append(record)
+        return render_template("index.html",restrooms=restrooms, r=restroom)
 
 
 # Restroom add form

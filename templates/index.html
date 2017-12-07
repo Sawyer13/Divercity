@@ -42,6 +42,7 @@
                     document.getElementById('submitBtn').disabled = false;
                 });
 
+
             } else{
                 alert("Lo sentimos, tu navegador no es compatible con la geolocalización.");
             }
@@ -93,8 +94,8 @@
         <div class="modal-header">
           <h4>Añade un baño nuevo</h4>
         </div>
-        <div class="modal-body">
-          <form action = "/" method = "POST">
+        <form action = "/" method = "POST">
+          <div class="modal-body">
             <div class="form-row">
               <div class="form-group">
                 <label for="place">Lugar</label>
@@ -107,7 +108,7 @@
               </div>
                 <div class="form-group">
                 <label for="locationBtn">Ubicación</label><br />
-                <button type="button" id="locationBtn" class="btn btn-sm" onclick="showPosition();">Guardar mi posición</button>
+                <button type="button" id="locationBtn" class="btn btn-sm" onclick="showPosition();" >Guardar mi posición</button>
                   <br>
                     <span class="text-muted">*Sólo guardamos la ubicación para almacenar la posición del baño, no guardamos quién lo envía.</span>
               </div>
@@ -118,14 +119,13 @@
               <!-- Latitude and longitude obtained with Google geofunction -->
               <input type="hidden" class="form-control" id="lat" name="lat" value={{r.lat}}>
               <input type="hidden" class="form-control" id="lng" name="lng" value={{r.lng}}>
-            
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" id="submitBtn" class="btn btn-primary" disabled="disabled">Enviar</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary" disabled="disabled" >Enviar</button>
+          </div>
+        </form>
       </div>
     </div>
       
