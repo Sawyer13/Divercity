@@ -30,11 +30,20 @@ footer {
     height: 650px;
 }
 
-@media screen and (max-height: 700px) {
+.btn-info {
+  margin-bottom: 10px;
+}
+
+textarea {
+   resize: none;
+}
+
+@media screen and (max-height: 768px) {
   footer{
     display: none;
   }
+
   #map {
-    height: 480px;
+    height: 450px;
   }
 }

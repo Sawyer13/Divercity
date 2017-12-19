@@ -34,24 +34,6 @@ def main():
             restrooms.append(record)
         return render_template("index.html",restrooms=restrooms, r=restroom)
 
-
-# Restroom add form
-@app.route("/add", methods=["GET", "POST"])
-def add_restroom():
-    if request.method == "GET":
-        restroom = {}
-        return render_template("form.html", r=restroom)
-    if request.method == "POST":
-        restroom = {}
-        restroom["place"] = request.form["place"]
-        restroom["description"] = request.form["description"]
-        # Calculate latitude and longitude with given direction
-        restroom["lat"] = request.form["lat"]
-        restroom["lng"] = request.form["lng"]
-        mongo.db.collection.insert(restroom)
-        return render_template("form.html", r=restroom)
-
-
 # About page
 @app.route("/about", methods=["GET"])
 def about():
