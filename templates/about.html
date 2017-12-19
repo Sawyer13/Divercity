@@ -8,35 +8,9 @@
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-
-    <script type="text/javascript">
-        function initMap(){
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(40.415363, -3.707398),
-                zoom: 12
-            });
-            {% for r in restrooms %}
-                var pos = new google.maps.LatLng({{r.lat}}, {{r.lng}});
-                var marker = new google.maps.Marker({
-                    position: pos,
-                    title:'{{r.place}}',
-                    description:'{{r.description}}'
-
-                });
-                google.maps.event.addListener(marker, 'click', function() {
-                    alert(
-                        "Lugar: " + this.title + "\n" +
-                        "Descripcion: " + this.description + "\n"
-                    );
-                });
-                // Add marker to de map
-                marker.setMap(map);
-            {% endfor %}
-        }
-    </script>
   </head>
 
-  <body onload="initMap()">
+  <body>
       <nav class="navbar navbar-default navbar-static-top">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -84,7 +58,5 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK1btl0omSyS3_6XnSVefL0jPBXAF3OK4&callback=initMap"></script>
-
   </body>
 </html>
