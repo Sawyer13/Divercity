@@ -28,7 +28,6 @@ El siguiente código de ejemplo muestra cómo el método principal actúa cuando
 
 ```
 if request.method == "GET":
-        mongo.db.collection.remove({})
         restrooms = []
         restroom = {}
         cursor = mongo.db.collection.find()
