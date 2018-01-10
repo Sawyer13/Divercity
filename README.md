@@ -13,11 +13,12 @@ La idea de este proyecto surge a raíz de el problema que existe en las ciudades
 ![alt text](https://github.com/Divercity/Divercity/blob/master/static/img/logo.jpg)
 
 ## Frameworks/Tecnologías utilizadas
-La aplicación está hecha con Python, HTML5 y JavaScript. La base de datos utilizada es MongoDB.
+La aplicación está hecha con Flask(Microframework de Python), HTML5, JavaScript y Bootstrap. La base de datos utilizada es MongoDB.
 
 <b>Hecho con:</b>
 - [Flask](http://flask.pocoo.org/)
 - [Bootstrap](https://getbootstrap.com/)
+- [MongoDB](https://www.mongodb.com)
 
 ## Características
 La aplicación utiliza la API de Google Maps para representar los baños registrados por los usuarios.
@@ -38,7 +39,7 @@ if request.method == "GET":
 ## Instalación
 Para su uso en local, se recomienda la utilización de un entorno virtual, como [virtualenv](https://virtualenv.pypa.io), para la instalación de las librerías que se utilizan.
 <br>
-Para desplegarlo en un servidor, la manera más sencilla es a través de [Heroku](https://www.heroku.com).
+Para desplegarlo en un servidor, la manera más sencilla es a través de [Heroku](https://www.heroku.com). Aquí tienes una pequeña [cheatsheet](https://github.com/AxelJunes/MLaaS/blob/master/heroku_cheatsheet.txt) para desplegar la aplicación en Heroku.
 
 ## Modo de uso
 La aplicación cuenta con dos páginas:
