@@ -25,6 +25,7 @@ La aplicación utiliza la API de Google Maps para representar los baños registr
 ## Ejemplo de código
 El siguiente código de ejemplo muestra cómo el método principal actúa cuando el usuario inicia la aplicación por primera vez:
 
+```
 if request.method == "GET":
         mongo.db.collection.remove({})
         restrooms = []
@@ -32,10 +33,12 @@ if request.method == "GET":
         cursor = mongo.db.collection.find()
         for record in cursor:
             restrooms.append(record)
-return render_template("index.html", restrooms=restrooms, r=restroom)
-
+        return render_template("index.html", restrooms=restrooms, r=restroom)
+```
 ## Instalación
 Para su uso en local, se recomienda la utilización de un entorno virtual, como [virtualenv](https://virtualenv.pypa.io), para la instalación de las librerías que se utilizan.
+<br>
+Para desplegarlo en un servidor, la manera más sencilla es a través de [Heroku](https://www.heroku.com).
 
 ## Modo de uso
 La aplicación cuenta con dos páginas:
