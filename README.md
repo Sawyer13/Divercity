@@ -49,4 +49,4 @@ La aplicación cuenta con dos páginas:
 - La página de "Sobre Divercity" muestra información sobre la aplicación.
 
 ## Créditos
-Esta aplicación ha sido desarrollada para la asignatura de Ética, Legislación y Profesión (ELP) perteneciente al cuarto año de los grados de Grado en Ingeniera Informática (GII) e Grado en Ingeniería del Software (GIW).
+Esta aplicación ha sido desarrollada para la asignatura de Ética, Legislación y Profesión (ELP) perteneciente al cuarto año de los grados en Ingeniera Informática (GII) e Ingeniería del Software (GIW).
