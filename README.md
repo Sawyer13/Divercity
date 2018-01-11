@@ -5,6 +5,9 @@ Las baños de género neutro o unisex pueden proporcionar un espacio más seguro
 ## Motivaciones
 La idea de este proyecto surge a raíz de el problema que existe en las ciudades con los baños, ya que estos casi siempre van dirigidos a un género concreto
 
+## Licencia
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 ## Estilo del código
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
