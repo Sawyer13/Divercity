@@ -3,14 +3,10 @@ Divercity es una aplicación web para encontrar baños de género neutro.
 Las baños de género neutro o unisex pueden proporcionar un espacio más seguro y acogedor para una persona transgénero o que no se identifica con los géneros masculino o femenino, por los cuales los baños públicos a menudo se dividen.
 
 ## Motivaciones
-La idea de este proyecto surge a raíz de el problema que existe en las ciudades con los baños, ya que estos casi siempre van dirigidos a un género concreto
+La idea de este proyecto surge a raíz de el problema que existe en las ciudades con los baños, ya que estos casi siempre van dirigidos a un género concreto (Masculino/Femenino).
 
 ## Licencia
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-## Estilo del código
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
  
 ## Logo
 ![alt text](https://github.com/Divercity/Divercity/blob/master/static/img/logo.jpg)
@@ -25,6 +21,10 @@ La aplicación está hecha con Flask(Microframework de Python), HTML5, JavaScrip
 
 ## Características
 La aplicación utiliza la API de Google Maps para representar los baños registrados por los usuarios.
+
+## Estilo del código
+
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Ejemplo de código
 El siguiente código de ejemplo muestra cómo el método principal actúa cuando el usuario inicia la aplicación por primera vez:
