@@ -38,7 +38,7 @@ if request.method == "GET":
         return render_template("index.html", restrooms=restrooms, r=restroom)
 ```
 ## Installation
-For the use of the application on your own PC, we recommend you use a virtual environment, like [virtualenv](https://virtualenv.pypa.io), for a safer installation of the needed libraries.
+For the use of the application on your own PC we recommend you use a virtual environment, like [virtualenv](https://virtualenv.pypa.io), for a safer installation of the needed libraries.
 <br>
 In order to deploy the application on a server, the easiest way is to do it through [Heroku](https://www.heroku.com). You can find a short cheatsheet for deploying apps on Heroku [here](https://github.com/AxelJunes/MLaaS/blob/master/heroku_cheatsheet.txt).
 
