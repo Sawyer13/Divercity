@@ -42,6 +42,28 @@ For the use of the application on your own PC we recommend you use a virtual env
 <br>
 In order to deploy the application on a server, the easiest way is to do it through [Heroku](https://www.heroku.com). You can find a short cheatsheet for deploying apps on Heroku [here](https://github.com/AxelJunes/MLaaS/blob/master/heroku_cheatsheet.txt).
 
+
+## Prerequisites
+
+You need to install python and configurate pip
+
+```
+>> Debian, Ubuntu
+$ sudo apt-get install python-pip python-dev build-essential
+$ sudo pip install --upgrade pip
+$ sudo pip install --upgrade virtualenv
+$ pip install flask
+$ pip install flask_pymongo
+
+```
+
+## Execution
+
+Now, you only need to execute:
+```sh
+$ python main.py
+```
+
 ## Mode of use
 The website has two views:
 - The main view has a map that contains markers with all the gender-free bathrooms that are registered in the database. This view has two buttons: "Add a bathroom", which lets the user add a new bathroom to the application (with a form), and "Bathrooms near me", that checks which bathrooms are close to the user and zooms to the users position.
